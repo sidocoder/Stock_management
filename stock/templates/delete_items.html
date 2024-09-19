@@ -1,0 +1,48 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Home</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbar-fixed/">
+
+    <!-- Bootstrap core CSS -->
+    <!--<link href=" {% static 'css/bootstrap.min.css' %}" rel="stylesheet"-->
+    <link href=" {% static 'css/stylesheet.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Custom styles for this template --> 
+    <link href=" {% static 'css/navbar-top-fixeds.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body>
+        
+   {% include 'navbar.html' %}
+   
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <form method='POST' action=''> {% csrf_token %}
+              <h1>are you sure you want to delete</h1>
+            <input class="btn btn-danger" type="submit" value='yes'>
+            <a href="/list_items"><div class="btn btn-primary">cancel</div></a>
+        </form>
+      </div>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
